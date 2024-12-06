@@ -1,0 +1,47 @@
+[
+    {
+        "hora": "06:00 AS 07:00",
+        "segunda_feira": "TREINO DA MANHA",
+        "terca_feira": "",
+        "quarta_feira": "TREINO DA MANHA",
+        "quinta_feira": "",
+        "sexta_feira": "TREINO DA MANHA",
+        "sabado": ""
+    },
+    {
+        "hora": "15:00 AS 17:00",
+        "segunda_feira": "",
+        "terca_feira": "",
+        "quarta_feira": "",
+        "quinta_feira": "",
+        "sexta_feira": "",
+        "sabado": "PROJETO"
+    },
+    {
+        "hora": "19:00 AS 20:00",
+        "segunda_feira": "KIDS",
+        "terca_feira": "",
+        "quarta_feira": "KIDS",
+        "quinta_feira": "",
+        "sexta_feira": "KIDS",
+        "sabado": ""
+    },
+    {
+        "hora": "20:00 AS 21:00",
+        "segunda_feira": "",
+        "terca_feira": "",
+        "quarta_feira": "",
+        "quinta_feira": "",
+        "sexta_feira": "ADULTO",
+        "sabado": ""
+    },
+    {
+        "hora": "20:00 AS 21:30",
+        "segunda_feira": "ADULTO",
+        "terca_feira": "NO-GI",
+        "quarta_feira": "ADULTO",
+        "quinta_feira": "NO-GI",
+        "sexta_feira": "",
+        "sabado": ""
+    }
+]

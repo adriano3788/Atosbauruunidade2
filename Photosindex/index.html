@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos</title>
+    <style>
+        /* Estilo básico */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Logo no canto superior esquerdo */
+        .logo-top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        /* Galeria */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .gallery img {
+                width: 100%;
+                max-width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Imagem no canto superior esquerdo -->
+        <img src="Imagens/Atos.png" alt="Logo Atos" class="logo-top-left" onclick="goToHome()">
+        <h1>Galeria de Fotos</h1>
+        <p>Explore nossas imagens incríveis</p>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <!-- Caminhos corrigidos para serem relativos -->
+            <img src="Photos/1.JPG" alt="Foto 1">
+            <img src="Photos/2.JPG" alt="Foto 2">
+            <img src="Photos/3.JPG" alt="Foto 3">
+            <img src="Photos/4.JPG" alt="Foto 4">
+            <img src="Photos/5.JPG" alt="Foto 5">
+            <img src="Photos/6.JPG" alt="Foto 6">
+            <img src="Photos/7.JPG" alt="Foto 7">
+            <img src="Photos/8.JPG" alt="Foto 8">
+            <img src="Photos/9.JPG" alt="Foto 9">
+            <img src="Photos/10.JPG" alt="Foto 10">
+            <img src="Photos/11.JPG" alt="Foto 11">
+            <img src="Photos/12.JPG" alt="Foto 12">
+            <img src="Photos/13.JPG" alt="Foto 13">
+            <img src="Photos/14.JPG" alt="Foto 14">
+            <img src="Photos/15.JPG" alt="Foto 15">
+            <img src="Photos/16.JPG" alt="Foto 16">
+            <img src="Photos/17.JPG" alt="Foto 17">
+            <img src="Photos/18.JPG" alt="Foto 18">
+            <img src="Photos/19.JPG" alt="Foto 19">
+            <img src="Photos/20.JPG" alt="Foto 20">
+            <img src="Photos/21.JPG" alt="Foto 21">
+            <img src="Photos/22.JPG" alt="Foto 22">
+            <img src="Photos/23.JPG" alt="Foto 23">
+            <img src="Photos/24.JPG" alt="Foto 24">
+            <img src="Photos/25.JPG" alt="Foto 25">
+            <img src="Photos/26.JPG" alt="Foto 26">
+            <img src="Photos/27.JPG" alt="Foto 27">
+            <img src="Photos/28.JPG" alt="Foto 28">
+            <img src="Photos/29.JPG" alt="Foto 29">
+            <img src="Photos/30.JPG" alt="Foto 30">
+            <img src="Photos/31.JPG" alt="Foto 31">
+            <img src="Photos/32.JPG" alt="Foto 32">
+            <img src="Photos/33.JPG" alt="Foto 33">
+            <img src="Photos/34.JPG" alt="Foto 34">
+            <img src="Photos/35.JPG" alt="Foto 35">
+            <img src="Photos/36.JPG" alt="Foto 36">
+            <img src="Photos/37.JPG" alt="Foto 37">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Galeria de Fotos. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function goToHome() {
+            window.location.href = "http://127.0.0.1/teste/index.html";
+        }
+    </script>
+</body>
+</html>
