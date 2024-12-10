@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos</title>
+    <style>
+        /* Estilo básico */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Logo no canto superior esquerdo */
+        .logo-top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        /* Galeria */
+        .gallery {
+            margin: 20px;
+        }
+
+        .year-section {
+            margin-bottom: 40px;
+        }
+
+        .year-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        .photo-grid {
+            display: none; /* Oculta por padrão */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .photo-grid img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .photo-grid img {
+                width: 100%;
+                max-width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Imagem no canto superior esquerdo -->
+        <img src="Imagens/Atos.png" alt="Logo Atos" class="logo-top-left" onclick="goToHome()">
+        <h1>Galeria de Fotos</h1>
+        <p>Explore nossas imagens incríveis</p>
+    </header>
+
+    <main class="gallery">
+        <!-- Seção de Fotos 2024 -->
+        <div class="year-section">
+            <h2 class="year-title" onclick="toggleVisibility('photos2024')">Fotos 2024</h2>
+            <div class="photo-grid" id="photos2024">
+                <img src="Photos/2024/27112024.jpg" alt="Foto 1">
+                <img src="Photos/2024/29112024.jpg" alt="Foto 2">
+                <img src="Photos/2024/__.jpg" alt="Foto 3">
+                <img src="Photos/2024/__.jpg" alt="Foto 4">
+            </div>
+        </div>
+
+        <!-- Seção de Graduação 2024 -->
+        <div class="year-section">
+            <h2 class="year-title" onclick="toggleVisibility('Graduação2024')">Graduação 2024</h2>
+            <div class="photo-grid" id="Graduação2024">
+                <img src="Photos/Graduação2024/1.jpg" alt="Foto 1">
+                <img src="Photos/Graduação2024/2.JPG" alt="Foto 2">
+                <img src="Photos/Graduação2024/3.JPG" alt="Foto 3">
+                <img src="Photos/Graduação2024/4.JPG" alt="Foto 4">
+                <img src="Photos/Graduação2024/5.JPG" alt="Foto 5">
+                <img src="Photos/Graduação2024/6.JPG" alt="Foto 6">
+                <img src="Photos/Graduação2024/7.JPG" alt="Foto 7">
+                <img src="Photos/Graduação2024/8.JPG" alt="Foto 8">
+                <img src="Photos/Graduação2024/9.JPG" alt="Foto 9">
+                <img src="Photos/Graduação2024/10.JPG" alt="Foto 10">
+                <img src="Photos/Graduação2024/11.JPG" alt="Foto 11">
+                <img src="Photos/Graduação2024/12.JPG" alt="Foto 12">
+                <img src="Photos/Graduação2024/13.JPG" alt="Foto 13">
+                <img src="Photos/Graduação2024/14.JPG" alt="Foto 14">
+                <img src="Photos/Graduação2024/15.JPG" alt="Foto 15">
+                <img src="Photos/Graduação2024/16.JPG" alt="Foto 16">
+                <img src="Photos/Graduação2024/17.JPG" alt="Foto 17">
+                <img src="Photos/Graduação2024/18.JPG" alt="Foto 18">
+                <img src="Photos/Graduação2024/19.JPG" alt="Foto 19">
+                <img src="Photos/Graduação2024/20.JPG" alt="Foto 20">
+                <img src="Photos/Graduação2024/21.JPG" alt="Foto 21">
+                <img src="Photos/Graduação2024/22.JPG" alt="Foto 22">
+                <img src="Photos/Graduação2024/23.JPG" alt="Foto 23">
+                <img src="Photos/Graduação2024/24.JPG" alt="Foto 24">
+                <img src="Photos/Graduação2024/25.JPG" alt="Foto 25">
+                <img src="Photos/Graduação2024/26.JPG" alt="Foto 26">
+                <img src="Photos/Graduação2024/27.JPG" alt="Foto 27">
+                <img src="Photos/Graduação2024/28.JPG" alt="Foto 28">
+                <img src="Photos/Graduação2024/29.JPG" alt="Foto 29">
+                <img src="Photos/Graduação2024/30.JPG" alt="Foto 30">
+                <img src="Photos/Graduação2024/31.JPG" alt="Foto 31">
+                <img src="Photos/Graduação2024/32.JPG" alt="Foto 32">
+                <img src="Photos/Graduação2024/33.JPG" alt="Foto 33">
+                <img src="Photos/Graduação2024/34.JPG" alt="Foto 34">
+                <img src="Photos/Graduação2024/35.JPG" alt="Foto 35">
+                <img src="Photos/Graduação2024/36.JPG" alt="Foto 36">
+                <!-- Outras fotos omitidas para brevidade -->
+            </div>
+        </div>
+
+        <!-- Seção de Fotos 2025 -->
+        <div class="year-section">
+            <h2 class="year-title" onclick="toggleVisibility('photos2025')">Fotos 2025</h2>
+            <div class="photo-grid" id="photos2025">
+                <img src="Photos/2025/__.jpg" alt="__">
+                <img src="Photos/2025/__.jpg" alt="Foto 2">
+                <img src="Photos/2025/__.jpg" alt="Foto 3">
+                <img src="Photos/2025/__.jpg" alt="Foto 4">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Galeria de Fotos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function goToHome() {
+            window.location.href = "http://127.0.0.1/teste/index.html";
+        }
+
+        function toggleVisibility(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "flex";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
