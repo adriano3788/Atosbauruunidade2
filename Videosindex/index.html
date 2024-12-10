@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Vídeos</title>
+    <style>
+        /* Estilo básico */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Logo no canto superior esquerdo */
+        .logo-top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        /* Galeria */
+        .gallery {
+            margin: 20px;
+        }
+
+        .year-section {
+            margin-bottom: 40px;
+        }
+
+        .year-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        .video-grid {
+            display: none; /* Oculta por padrão */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .video-grid video {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-grid video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .video-grid video {
+                width: 100%;
+                max-width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Imagem no canto superior esquerdo -->
+        <img src="Imagens/Atos.png" alt="Logo Atos" class="logo-top-left" onclick="goToHome()">
+        <h1>Galeria de Vídeos</h1>
+        <p>Explore nossos vídeos incríveis</p>
+    </header>
+
+    <main class="gallery">
+        <!-- Seção de Vídeos 2024 -->
+        <div class="year-section">
+            <h2 class="year-title" onclick="toggleVisibility('videos2024')">Vídeos 2024</h2>
+            <div class="video-grid" id="videos2024">
+                <video controls>
+                    <source src="Videos/2024/Graduação.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <video controls>
+                    <source src="Videos/2024/video2.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </div>
+                <!-- Seção de Graduação 2024 -->
+                <div class="year-section">
+                    <h2 class="year-title" onclick="toggleVisibility('Graduação2024')">Graduação 2024</h2>
+                    <div class="video-grid" id="Graduação2024">
+                        <video controls>
+                            <source src="Videos/Graduação2024/Graduação3.mp4" type="video/mp4">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                        <video controls>
+                            <source src="Videos/2024/video2.mp4" type="video/mp4">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                    </div>
+                </div>
+
+        <!-- Seção de Vídeos 2025 -->
+        <div class="year-section">
+            <h2 class="year-title" onclick="toggleVisibility('videos2025')">Vídeos 2025</h2>
+            <div class="video-grid" id="videos2025">
+                <video controls>
+                    <source src="Videos/2025/Graduação2.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <video controls>
+                    <source src="Videos/2025/Graduação3.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Galeria de Vídeos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function goToHome() {
+            window.location.href = "http://127.0.0.1/teste/index.html";
+        }
+
+        function toggleVisibility(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "flex";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
