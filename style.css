@@ -1,0 +1,108 @@
+/* Estilo básico */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000005;
+    color: #f7f6f6;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: #0073e6;
+    color: rgb(5, 5, 5);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+button { 
+    margin-right: 30%;
+    margin-top: 5%;
+    padding: 10px 20px;
+    background: #f9f9fa;
+    color: rgb(7, 7, 7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #f5f6f7;
+}
+
+/* Rodapé */
+footer {
+    background: #0426ec;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* background-image */
+body {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteúdo principal */
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    border: 5px solid #050505; /* Borda preto */
+    border-radius: 10px; /* Cantos arredondados */
+    margin-bottom: 20px;
+}
+main.botao {
+    margin-top: 5%;
+}
+/* Contêiner da imagem */
+.image-container {
+    position: relative; /* Habilita posicionamento relativo para os filhos */
+    display: inline-block; /* Mantém o tamanho da imagem como referência */
+    text-align: center;
+}
+
+/* Imagem */
+.image-container img {
+    width: 100%; /* Ajuste conforme necessário */
+    max-width: 700px; /* Tamanho máximo */
+    border-radius: 10px; /* Opcional: arredondar bordas */
+}
+
+/* Botão */
+.image-container .botao {
+    position: absolute; /* Posiciona o botão relativo ao contêiner */
+    top: 83%; /* Centraliza verticalmente */
+    left: 55%; /* Centraliza horizontalmente */
+    transform: translate(-55%, -230%); /* Ajusta a centralização */
+    background-color: #1900fc; /* Cor do botão */
+    color: rgb(5, 5, 5);
+    border: none;
+    border-radius: 3px;
+    padding: 1px 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.image-container .botao:hover {
+    background-color: #f6f6fa; /* Cor do botão ao passar o mouse */
+}
+
+

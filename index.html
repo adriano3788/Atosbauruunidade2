@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade de Horários - Academia</title>
+    <style>
+        /* Estilo básico */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000005;
+            color: #f7f6f6;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: #050505;
+            color: rgb(250, 249, 249);
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Menu lateral */
+        .sidebar {
+            position: fixed;
+            top: 30%;
+            left: 10px;
+            background: #1a1a1a;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .sidebar a:hover {
+            background: #333;
+        }
+
+        /* Ajustes para mobile */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .sidebar a {
+                display: inline-block;
+                margin: 5px 10px;
+                padding: 10px;
+            }
+        }
+
+        /* Conteúdo principal */
+        main {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .schedule-controls {
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background: #f9f9fa;
+            color: rgb(7, 7, 7);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #f5f6f7;
+        }
+
+        /* Imagem */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 15%;
+            left: 22%;
+            transform: translate(-50%, -50%);
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 1000;
+            width: 30%;
+        }
+
+        .modal p {
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        /* Tabela */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        th {
+            background-color: #222;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ATOS BAURU UNIDADE 2</h1>
+    </header>
+
+    <div class="logo-container">
+        <img src="Imagens/Atos.png" alt="Logo Atos" id="logoButton" style="width: 100px;">
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="infoModal">
+        <h2>Informações de Contato</h2>
+        <p><strong>Endereço:</strong> Rua: Bernardino de Campos 20-12</p>
+        <p><strong>Telefone:</strong> (14) 12345-6789</p>
+        <button id="closeModal">Fechar</button>
+    </div>
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+        <a href="Photosindex/index.html" id="fotosLink">Fotos</a>
+        <a href="Videosindex/index.html" id="videosLink">Vídeos</a>
+        <a href="#agende" id="agendeLink">Agende seu horário</a>
+        <a href="#conheca" id="conhecaLink">Conheça nossa academia</a>
+    </div>
+
+    <main>
+        <p>Professor: Ludy Calixto</p>
+        <div class="image-container">
+            <img src="Imagens/Ludy2.jpg" alt="Imagem do professor Ludy">
+        </div>
+        <div class="schedule-controls">
+            <button id="showSchedule">Exibir Grade de Horários</button>
+            <button id="hideSchedule" style="display: none;">Esconder Grade de Horários</button>
+        </div>
+        <div id="schedule" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Segunda-feira</th>
+                            <th>Terça-feira</th>
+                            <th>Quarta-feira</th>
+                            <th>Quinta-feira</th>
+                            <th>Sexta-feira</th>
+                            <th>Sábado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleData"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Academia Ludy Calixto</p>
+    </footer>
+
+    <script>
+        const showButton = document.getElementById('showSchedule');
+        const hideButton = document.getElementById('hideSchedule');
+        const schedule = document.getElementById('schedule');
+        const scheduleData = document.getElementById('scheduleData');
+
+        showButton.addEventListener('click', () => {
+            schedule.style.display = 'block';
+            showButton.style.display = 'none';
+            hideButton.style.display = 'inline-block';
+        });
+
+        hideButton.addEventListener('click', () => {
+            schedule.style.display = 'none';
+            showButton.style.display = 'inline-block';
+            hideButton.style.display = 'none';
+        });
+
+        const logoButton = document.getElementById('logoButton');
+        const infoModal = document.getElementById('infoModal');
+        const closeModal = document.getElementById('closeModal');
+
+        logoButton.addEventListener('click', () => {
+            infoModal.style.display = 'block';
+        });
+
+        closeModal.addEventListener('click', () => {
+            infoModal.style.display = 'none';
+        });
+
+        fetch('./horarios.json?nocache=' + new Date().getTime())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo JSON');
+                }
+                return response.json();
+            })
+            .then(data => {
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.hora || '--'}</td>
+                        <td>${item.segunda_feira || '--'}</td>
+                        <td>${item.terca_feira || '--'}</td>
+                        <td>${item.quarta_feira || '--'}</td>
+                        <td>${item.quinta_feira || '--'}</td>
+                        <td>${item.sexta_feira || '--'}</td>
+                        <td>${item.sabado || '--'}</td>
+                    `
+                    scheduleData.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao carregar os dados:', error);
+                alert('Erro ao carregar os dados da grade de horários.');
+            });
+    </script>
+</body>
+</html>
